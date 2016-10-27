@@ -1,0 +1,1 @@
+This is a portfolio website for Paul A. Mould. This site is built using [Angular 2](https://github.com/angular/angular) and WordPress using the [WP REST API v2](https://github.com/WP-API/WP-API).

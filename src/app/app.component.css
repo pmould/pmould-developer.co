@@ -1,0 +1,59 @@
+body {
+  height: 1000px;
+  background: gray;
+}
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+header { 
+  background: rgba(255, 255, 255, 0.22);
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+  top: 0;
+  transition: all .5s linear;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+header.on {
+  background: rgba(255, 255, 255, 0.9);
+  transition: all .5s linear;
+}
+.site-nav {
+  position: relative;
+  float: left;
+
+}
+.site-nav li {
+  float: left;
+  list-style: none;
+  text-decoration: none;
+    padding: 52px 75px;
+  font-size: 18px;
+  color: white;
+  transition: all .5s linear;
+}
+.site-nav a {
+  color: #00a0d4;
+}
+header.on .site-nav li {
+  font-size: 12px;
+  transition: all .5s linear;
+  padding: 27px 75px;
+}
+.logo {
+  position: relative;
+  float: left;
+  margin: 10px 0 10px 20px;
+  width: 200px;
+}
+.logo img {
+  width: 200px;
+  transition: all .5s linear;
+}
+header.on .logo img {
+  width: 100px;
+  transition: all .5s linear;
+}
+		

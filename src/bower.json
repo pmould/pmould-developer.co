@@ -1,0 +1,19 @@
+{
+  "name": "pmoulddesigns",
+  "version": "0.0.0",
+  "authors": [
+    "pmould <paul_mould@hotmail.com>"
+  ],
+  "description": "website to show of Paul Mould's websites",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
