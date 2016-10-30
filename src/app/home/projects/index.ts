@@ -1,2 +1,2 @@
 export * from './projects.service';
-export * from './projects-list';
+export * from './projects-thumbs-list';
