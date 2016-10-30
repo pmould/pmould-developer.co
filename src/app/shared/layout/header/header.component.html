@@ -1,0 +1,33 @@
+<header class="clearfix">
+  <nav class=" site-nav navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header"> <button type="button" class="collapsed navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-6"
+          aria-expanded="false"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+            <a href="#" class="navbar-brand">
+              <img [src]="siteLogo" class="img-responsive" alt="">
+            </a>
+        </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-6">
+        <ul class="nav navbar-nav">
+        <li><a [routerLink]="['/about-me']">About me</a></li>
+        <li><a (click)="scrollDown()" [routerLink]="['/home']" fragment="project-list">Portfolio</a></li>
+        <li><a [routerLink]="['/home']" fragment="project-list">Blog</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+
+<!--<header class="clearfix">
+  <div class="logo">
+    <img [src]="siteLogo" alt="">
+  </div>
+  <nav class="site-nav">
+    <ul>
+      <li><a [routerLink]="['/about-me']">About me</a></li>
+      <li><a (click)="scrollDown()" class="portfolio">Portfolio</a></li>
+      <li><a [routerLink]="['/home']" fragment="project-list">Blog</a></li>
+    </ul>
+  </nav>
+</header>-->
