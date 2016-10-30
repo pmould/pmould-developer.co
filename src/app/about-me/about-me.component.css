@@ -1,0 +1,30 @@
+.container  {
+  margin-top: 300px;
+}
+
+.container  > .row:first-child {
+  margin-top: 45px;
+}
+
+.about-me-img {
+  border: 3px double #00a0d4;
+  border-radius: 350px;
+  display: block;
+  margin: 0 auto
+}
+
+h1 {
+	margin: 0px;
+}
+
+hr {
+  height: 5px;
+  width: 200px;
+  background-color: #00a0d4;
+  margin: 10px 0 8px;
+}
+@media (max-width: 767px) {
+  .container {
+      margin-top: 100px;
+  }
+}
