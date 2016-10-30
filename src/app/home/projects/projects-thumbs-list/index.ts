@@ -1,0 +1,1 @@
+export * from './projects-thumbs-list.component';

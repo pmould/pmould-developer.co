@@ -8,6 +8,11 @@
   transition: all .5s linear;
 }
 
+/*.gallery-item:hover img {
+  -webkit-transform: scale(1.25);
+  transform: scale(1.25);
+}*/
+
 .gallery-item-overlay {
   background: rgba(0, 0, 0, 0.7);
   opacity: 0;
@@ -25,6 +30,9 @@
   width: 100%;
   transition: all .5s linear;
   color: white;
+}
+.gallery-item .overlay > * {
+  opacity: 0;
 }
 .gallery-item a {
   color: white;
@@ -58,7 +66,7 @@
 .gallery-item:hover h3 {
   bottom: 30%;
 }
-.gallery-item:hover .overlay {
+.gallery-item:hover .overlay, .gallery-item:hover .overlay > * {
   opacity: 1;
 }
 .more .glyphicon-search {
