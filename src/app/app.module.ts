@@ -8,7 +8,10 @@ import { PostListComponent } from './posts/post-list/post-list.component';
 import { Wpng2RoutingModule } from './app-routing.module';
 import { PostSingleComponent } from './posts/post-single/post-single.component';
 import {  } from './home/home.component';
-import { ProjectsListComponent, ProjectsService, HomeComponent} from './home';
+import { ProjectsThumbsListComponent, ProjectsService, HomeComponent} from './home';
+import  { ProjectComponent } from './home/projects/project';
+import { HeaderComponent } from './shared/layout/header/header.component';
+import { AboutMeComponent } from './about-me/about-me.component';
 
 
 @NgModule({
@@ -17,7 +20,10 @@ import { ProjectsListComponent, ProjectsService, HomeComponent} from './home';
     PostListComponent,
     PostSingleComponent,
     HomeComponent,
-    ProjectsListComponent
+    ProjectsThumbsListComponent,
+    HeaderComponent,
+    ProjectComponent,
+    AboutMeComponent
   ],
   imports: [
     BrowserModule,
