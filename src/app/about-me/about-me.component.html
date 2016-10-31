@@ -2,9 +2,9 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-sm-4">
-      <img class="about-me-img img-responsive" [src]="aboutMeImg" alt="">
+      <img [@flyInOut]="'in'" class="about-me-img img-responsive" [src]="aboutMeImg" alt="">
     </div> 
-    <div class="col-xs-12 col-sm-8">
+    <div [@flyInOutRight]="'in'" class="col-xs-12 col-sm-8">
       <h1>About Me</h1>
       <hr>
       <p>
