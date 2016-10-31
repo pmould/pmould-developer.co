@@ -1,5 +1,22 @@
-<ul>
-  <li *ngFor="let post of posts" (click)="selectPost(post.slug)">
-    {{ post.title.rendered }}
-  </li>
-</ul>
+<app-header></app-header>
+<div class="blog-container">
+  <div class="blog-header">
+    <div [@flyInOut]="'in'" class="blog-title">
+      <h1 [@animateTitle]="'in'">PMOULD <span [style.fontWeight]="'normal'">Developer <div>Blog</div></span></h1>
+    </div>
+  </div>
+  <div [@flyInOutBottom]="'in'" class="container-wrapper">
+    <div  class="container">
+      <div class="row">
+        <div class="div col-xs-10 col-xs-offset-1">
+        <ul class="posts-list">
+          <li *ngFor="let post of posts" (click)="selectPost(post.slug)">
+            <span class="date">{{ post.date | date:'dd MMM yyyy' | uppercase }}</span>
+            <span class="title">{{ post.title.rendered }}</span>
+          </li>
+        </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
