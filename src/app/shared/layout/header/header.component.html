@@ -1,9 +1,9 @@
-<header class="clearfix">
-  <nav class=" site-nav navbar navbar-default navbar-fixed-top">
+<header  class="clearfix">
+  <nav [@flyInOut]="'in'" class=" site-nav navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
       <div class="navbar-header"> <button type="button" class="collapsed navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-6"
           aria-expanded="false"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-            <a href="#" class="navbar-brand">
+            <a [routerLink]="['/home']" class="navbar-brand">
               <img [src]="siteLogo" class="img-responsive" alt="">
             </a>
         </div>
@@ -11,7 +11,7 @@
         <ul class="nav navbar-nav">
         <li><a [routerLink]="['/about-me']">About me</a></li>
         <li><a (click)="scrollDown()" [routerLink]="['/home']" fragment="project-list">Portfolio</a></li>
-        <li><a [routerLink]="['/home']" fragment="project-list">Blog</a></li>
+        <li><a [routerLink]="['/blog']">Blog</a></li>
         </ul>
       </div>
     </div>

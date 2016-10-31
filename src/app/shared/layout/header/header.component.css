@@ -21,6 +21,7 @@
   position: relative;
   float: left;
   margin: 10px 0 10px 20px;
+  cursor: pointer
 }
 .navbar-brand img {
   width: 200px;
