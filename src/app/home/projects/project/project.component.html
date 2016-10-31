@@ -1,9 +1,9 @@
 <div *ngIf="project" id="project" class="pm-modal-container container">
   <div class="row">
     <div class="pm-modal col-xs-10 col-xs-offset-1">
-      <div class="pm-modal-close" [routerLink]="['/home']" fragment="project-list"></div>
       <div class="pm-modal-content row">
-        <div class="col-xs-12 col-sm-7">
+        <div [@flyInOut]="'in'" class="pm-modal-close" [routerLink]="['/home']" fragment="project-list"></div>
+        <div [@flyInOut]="'in'" class="col-xs-12 col-sm-7">
         <div id="carousel-project" class="carousel slide" data-ride="carousel">
           <!-- Indicators -->
           <ol class="carousel-indicators">
@@ -33,7 +33,7 @@
           </a>
         </div>
         </div>
-        <div class="col-xs-12 col-sm-5">
+        <div [@flyInOutBottom]="'in'" class="col-xs-12 col-sm-5">
           <h1 [innerHtml]="project.title.rendered"></h1>
           <hr>
           <div [innerHtml]="project.content.rendered"></div>

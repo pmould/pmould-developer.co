@@ -43,6 +43,8 @@
     display: block;
     text-align: center;
     width: 515px;
+    height: 213px;
+    overflow: hidden;
     color: white;
     background: rgba(0, 0, 0, 0.42);
     border-radius: 3px;
