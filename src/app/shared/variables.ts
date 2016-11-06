@@ -1,0 +1,1 @@
+export let _wpHost = 'http://pmouldeveloper.co';
