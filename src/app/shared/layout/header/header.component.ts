@@ -33,8 +33,10 @@ export class HeaderComponent implements OnInit {
   }
 
   scrollDown() {
-    $('html, body').animate({
-      scrollTop: $(".gallery").offset().top
-  	}, 2000); 	
+    if($(".gallery").length) {
+      $('html, body').animate({
+        scrollTop: $(".gallery").offset().top
+      }, 2000); 	
+    }
   }
 }

@@ -52,6 +52,10 @@
     transition: all .5s linear;
     padding: 27px 75px;
   }
+  .blog-header.on {
+    transition: all .5s linear;
+    padding-top: 105px;
+  }
 }
 @media (max-width: 767px) {
   .navbar {
