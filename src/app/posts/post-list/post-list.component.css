@@ -33,6 +33,7 @@
   background-image: radial-gradient(#d3d3d3 15%, transparent 16%), radial-gradient(#d3d3d3 15%, transparent 16%);
   background-size: 6px 6px;
   background-position: 0 0, 3px 3px;
+  transition: all .5s linear;
 }
 
 .blog-animate-wrap {
@@ -43,7 +44,7 @@
   display: inline-block;
   padding: 20px 25px 25px 25px;
   border: 5px solid #00a0d4;
-  margin: 47px 0;
+  margin: 75px 0;
   width: 515px;
   height: 150px;
   overflow: hidden;
@@ -65,7 +66,7 @@ ul.posts-list{
   color: #919190; 
 }
 .posts-list .title {
-  font-size: 48px;
+  font-size: 38px;
   color: #5a5a5a;
   cursor: pointer;
   line-height: 1
@@ -75,5 +76,12 @@ ul.posts-list{
  color: black;
 }
 
+
+@media (min-width: 768px) {
+  .blog-header.on {
+    transition: all .5s linear;
+    padding-top: 105px;
+  }
+}
 
 
