@@ -4,7 +4,7 @@
       <div class="gallery-item-overlay"></div>
       <img class="project-image" [src]="project.featured_image" alt="">
       <div class="overlay">
-        <h1><a href="https://www.q-free.com/solution/traffic-management-centre"  target="_blank">{{ project.title.rendered }}</a></h1>
+        <h1><a href="{{ project.project_url }}"  target="_blank">{{ project.title.rendered }}</a></h1>
         <h3>{{ project.categories[0] }}</h3>
         <div class="more">
           <span [routerLink]="['/project', project.slug]" class="glyphicon glyphicon-search"></span>	
