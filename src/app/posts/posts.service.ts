@@ -6,11 +6,12 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 
 import { Post } from './post';
+import { _wpHost } from './../shared';
 
 @Injectable()
 export class PostsService {
 
-  private _wpBase = "http://localhost:8888/godsarrow/wp-json/wp/v2/";
+  private _wpBase = _wpHost + '/wp-json/wp/v2/';
 
   constructor(private http: Http) { }
 
