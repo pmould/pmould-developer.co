@@ -12,10 +12,12 @@ export class AppComponent implements OnInit {
             $('.navbar').addClass('on');
             $('.header-image').addClass('on');
             $('.position').addClass('on');
+            $('.blog-header').addClass('on');
         } else {
         	$('.navbar').removeClass('on');
         	$('.header-image').removeClass('on');
         	$('.position').removeClass('on');
+          $('.blog-header').removeClass('on');
         }
     });
   }
