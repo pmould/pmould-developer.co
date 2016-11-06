@@ -1,0 +1,35 @@
+.container-wrapper {
+  border-top: 1px solid #cdcdcd;
+}
+
+.blog-header {
+  text-align: center;
+  padding-top: 155px;
+  background: #ececec;
+  background-image: radial-gradient(#d3d3d3 15%, transparent 16%), radial-gradient(#d3d3d3 15%, transparent 16%);
+  background-size: 6px 6px;
+  background-position: 0 0, 3px 3px;
+  transition: all .5s linear;
+}
+
+.blog-header h1 {
+  font-size: 48px;
+  overflow: hidden;
+}
+
+.blog-title {
+    display: inline-block;
+    margin: 75px 0;
+    overflow: hidden;
+}
+
+.post {
+  margin-top: 60px;
+}
+
+@media (min-width: 768px) {
+  .blog-header.on {
+    transition: all .5s linear;
+    padding-top: 105px;
+  }
+}

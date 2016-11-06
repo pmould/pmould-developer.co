@@ -1,7 +1,30 @@
-<div *ngIf="post">
-  <h1>{{ post.title.rendered }}</h1>
-  <div [innerHTML]="post.content.rendered"></div>
+<app-header></app-header>
+<div *ngIf="post" class="blog-header">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-10 col-xs-offset-1">
+        <div [@animateTitle]="'in'" class="blog-title">
+          <h1 >{{ post.title.rendered }}</h1>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-<div *ngIf="!post">
-  no post found
+
+<div [@flyInOutBottom]="'in'" class="container-wrapper">
+  <div  class="container">
+    <div class="row">
+      <div class="col-xs-10 col-xs-offset-1">
+        <div class="post">
+        <div >
+          <div class="content"></div>
+        </div>
+        <div *ngIf="!post">
+          <!--no post found-->
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
+
