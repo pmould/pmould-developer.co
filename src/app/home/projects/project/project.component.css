@@ -59,5 +59,17 @@
 	.pm-modal-close {
 		position: relative;
     margin: 0 auto;
+		margin-bottom: 25px;
+	}
+	.pm-modal-container {
+		width: 80%;
+	}
+	.title-col {
+		margin-top: 45px;
+	}
+}
+@media screen and (max-width: 400px) {
+	.pm-modal h1 {	
+		font-size: 28px;
 	}
 }
