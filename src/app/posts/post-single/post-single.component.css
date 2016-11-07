@@ -27,9 +27,17 @@
   margin-top: 60px;
 }
 
-@media (min-width: 768px) {
-  .blog-header.on {
-    transition: all .5s linear;
-    padding-top: 105px;
+@media (max-width: 768px) {
+  .blog-header {
+    padding-top: 80px;
+  }
+  .blog-header h1{
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 400px) {
+  .blog-header h1{
+    font-size: 28px;
   }
 }
