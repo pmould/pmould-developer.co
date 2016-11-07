@@ -13,6 +13,7 @@
   height: 82px;
   overflow: hidden;
   margin: 0;
+  font-family: 'Roboto', sans-serif;
 }
 .blog-header h1::after {
   width: 100%;

@@ -7,6 +7,7 @@
   margin-top: 0;
   font-size: 50px;
   padding: 0 5px 5px 5px;
+  font-family: 'Roboto', sans-serif;
 
 }
 .intro h2 {
@@ -15,6 +16,7 @@
   padding: 0 5px 5px 5px;
   font-size: 36px;
   font-weight: 300;
+  font-family: 'Roboto', sans-serif;
 }
 
 .header-image {
