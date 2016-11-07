@@ -55,6 +55,7 @@
 ul.posts-list{
   list-style: none;
   margin-top: 60px;
+  padding: 0;
 }
 .posts-list li {
   margin-top: 25px;
@@ -77,11 +78,47 @@ ul.posts-list{
 }
 
 
-@media (min-width: 768px) {
-  .blog-header.on {
-    transition: all .5s linear;
-    padding-top: 105px;
+@media (max-width: 768px) {
+  .blog-header {
+    padding-top: 80px;
   }
 }
 
+@media (min-width: 400px) and (max-width: 767px) {
+  .blog-header h1 {
+    font-size: 32px;
+  }
+  .blog-header h1::after {
+    bottom: 3px;
+  }
+  .blog-title {
+    width: 400px;
+    height: 145px;
+  }
+  .posts-list .date {
+    font-size: 22px;
+  }
+  .posts-list .title {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 400px) {
+  .blog-header h1 {
+    font-size: 28px;
+  }
+  .blog-header h1::after {
+    bottom: 11px;
+  }
+  .blog-title {
+      width: 320px;
+      height: 130px;
+  }
+  .posts-list .date {
+    font-size: 18px;
+  }
+  .posts-list .title {
+    font-size: 22px;
+  }
+}
 
