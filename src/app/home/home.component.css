@@ -53,13 +53,40 @@
 .position img {
   -webkit-filter: grayscale(100%);
   filter: grayscale(100%);
-    width: 113px;
-    transition: all .5s;
-    padding-top: 5px;
+  width: 113px;
+  transition: all .5s;
+  padding-top: 5px;
 }
 
 .position.on img {
-    width: 113px;
+  width: 113px;
   -webkit-filter: grayscale(0%);
   filter: grayscale(0%);
 }
+
+@media (max-width: 767px) {
+  .intro h1 {
+    font-size: 40px;
+  }
+  .intro h2 {
+    font-size: 32px;
+  }
+
+  .position {
+    width: 400px;
+  }  
+}
+
+@media (max-width: 400px) {
+  .intro h1 {
+    font-size: 32px;
+  }
+  .intro h2 {
+    font-size: 24px;
+  }
+
+  .position {
+    width: 320px;
+  }
+}
+
