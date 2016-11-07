@@ -69,11 +69,44 @@
 .gallery-item:hover .overlay, .gallery-item:hover .overlay > * {
   opacity: 1;
 }
-.more .glyphicon-search {
+.more .glyphicon-eye-open {
   padding: 10px;
   background: #00a0d4;
   border-radius: 3px;
   cursor: pointer;
+}
+
+@media (min-width: 400px) and (max-width: 850px) {
+  .gallery-item h1 {
+    bottom: 30%;
+    position: absolute;
+    width: 100%;
+    transition: all .5s;
+    font-size: 28px
+  }
+  .gallery-item:hover h1 {
+    bottom: 45%;
+  }
+  .gallery-item .more {
+    bottom: 45%;
+    position: absolute;
+    width: 100%;
+    transition: all .5s;
+  }
+
+  .gallery-item:hover .more {
+    bottom: 70%;
+  }
+  .gallery-item h3 {
+    bottom: 14.5%;
+    position: absolute;
+    width: 100%;
+    transition: all .7s;
+    font-size: 18px
+  }
+  .gallery-item:hover h3 {
+    bottom: 30%;
+  }	
 }
 
 @media (max-width: 400px) {
