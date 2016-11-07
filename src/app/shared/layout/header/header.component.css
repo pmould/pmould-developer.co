@@ -79,3 +79,9 @@
       padding: 30px;
   }
 }
+
+@media (min-width: 767px) and (max-width: 991px) {
+  .navbar li {
+    padding: 52px 39px;
+  }
+}
