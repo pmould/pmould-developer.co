@@ -27,4 +27,7 @@ hr {
   .container {
       margin-top: 100px;
   }
+  .about-me-txt {
+    margin-top: 45px;
+  }
 }
