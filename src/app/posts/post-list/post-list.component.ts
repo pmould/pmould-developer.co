@@ -12,6 +12,7 @@ import {
 import { Post } from '../post';
 import { PostsService } from '../posts.service';
 import { Router } from '@angular/router';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-post-list',
@@ -106,6 +107,10 @@ export class PostListComponent implements OnInit {
  
   selectPost(slug) {
   	this.router.navigate([slug]);
+  }
+
+  dateFormat(date) {
+    return moment(date).format('DD MMM YYYY');
   }
 
 }

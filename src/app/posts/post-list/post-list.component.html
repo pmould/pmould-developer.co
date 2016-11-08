@@ -11,7 +11,7 @@
         <div class="div col-xs-12 col-sm-10 col-sm-offset-1">
         <ul class="posts-list">
           <li *ngFor="let post of posts" (click)="selectPost(post.slug)">
-            <span class="date">{{ post.date | date:'dd MMM yyyy' | uppercase }}</span>
+            <span class="date">{{ dateFormat(post.date) | uppercase }}</span>
             <span class="title">{{ post.title.rendered }}</span>
           </li>
         </ul>
