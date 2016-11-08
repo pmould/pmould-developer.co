@@ -7,7 +7,8 @@ import {
   animate,
   transition,
   group,
-  ElementRef
+  ElementRef,
+  ViewEncapsulation
 } from '@angular/core';
 import { Post } from '../post';
 import { PostsService } from '../posts.service';
@@ -18,6 +19,7 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
   templateUrl: './post-single.component.html',
   styleUrls: ['./post-single.component.css'],
   providers: [PostsService],
+  encapsulation: ViewEncapsulation.None,
   animations: [
     trigger('animateTitle', [
       state('in', style({overflow: 'initial', opacity: 1})),

@@ -24,6 +24,11 @@
     overflow: hidden;
 }
 
+ p {
+  word-wrap: break-word;
+  
+ }
+
 .post {
   margin-top: 60px;
 }
