@@ -91,20 +91,22 @@ export class PostSingleComponent implements OnInit {
          this.el.nativeElement.querySelector('.content').innerHTML = this.post.content.rendered;
           let fragment ='';
           this.route.fragment.forEach((f)=> {
-            $('html, body').animate({
-                scrollTop: $('#'+f).offset().top -200
-            }, 0);  
-            window.location.hash = f;         
+            if ($('#'+f).length) {
+              $('html, body').animate({
+                  scrollTop: $('#'+f).offset().top -200
+              }, 0);  
+              window.location.hash = f; 
+            }       
           });
-
          $('.content a').click((e) => {
            var fragment = e.target.getAttribute('href').substr(1);
-
            e.preventDefault();
-          $('html, body').animate({
-              scrollTop: $('#'+fragment).offset().top -200
-          }, 0);
-          window.location.hash = fragment; 
+          if($('#'+fragment).length) {
+            $('html, body').animate({
+            scrollTop: $('#'+fragment).offset().top -200
+            }, 0);
+            window.location.hash = fragment;          
+          }
           });
          });
   }
