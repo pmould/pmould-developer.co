@@ -13,7 +13,6 @@ import  { ProjectComponent } from './home/projects/project';
 import { HeaderComponent } from './shared/layout/header/header.component';
 import { AboutMeComponent } from './about-me/about-me.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,

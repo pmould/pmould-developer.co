@@ -7,8 +7,7 @@ import {
   animate,
   transition,
   group,
-  ElementRef,
-  ViewEncapsulation
+  ElementRef
 } from '@angular/core';
 import { Post } from '../post';
 import { PostsService } from '../posts.service';
@@ -19,7 +18,6 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
   templateUrl: './post-single.component.html',
   styleUrls: ['./post-single.component.css'],
   providers: [PostsService],
-  encapsulation: ViewEncapsulation.None,
   animations: [
     trigger('animateTitle', [
       state('in', style({overflow: 'initial', opacity: 1})),
@@ -81,7 +79,7 @@ export class PostSingleComponent implements OnInit {
 
   post;//: Post;
 
-  constructor( private postsService: PostsService, private route: ActivatedRoute,private _router: Router, private el: ElementRef ) {
+  constructor(private postsService: PostsService, private route: ActivatedRoute,private _router: Router, private el: ElementRef ) {
    
   }
 
@@ -114,7 +112,6 @@ export class PostSingleComponent implements OnInit {
   }
 
   ngOnInit() {
-
     this.route.params.forEach((params: Params) => {
        let slug = params['slug'];
        this.getPost(slug)
