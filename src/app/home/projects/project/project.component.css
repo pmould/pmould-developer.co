@@ -9,6 +9,9 @@
   left: 50%;
   transform: translate(-50%, 0);
 }
+.pm-modal-container > .row {
+	width: 100%;
+}
 .pm-modal-close {
     background-image: url(/assets/img/popup-close.png);
     background-repeat: no-repeat;
