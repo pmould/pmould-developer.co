@@ -106,7 +106,7 @@ export class PostListComponent implements OnInit {
   }
  
   selectPost(slug) {
-  	this.router.navigate([slug]);
+  	this.router.navigate(['/blog', slug]);
   }
 
   dateFormat(date) {
