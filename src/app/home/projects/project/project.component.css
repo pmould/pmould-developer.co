@@ -65,9 +65,20 @@
     margin: 0 auto;
 		margin-bottom: 25px;
 	}
-	.pm-modal-container {
-		width: 80%;
+	.container {
+    padding: 0;
 	}
+	.row {
+		margin: 0;
+	}
+	.pm-modal-container {
+		width: 100%;
+	}
+
+  .pm-modal-content div {
+      padding: 0;
+  }
+
 	.title-col {
 		margin-top: 45px;
 	}
