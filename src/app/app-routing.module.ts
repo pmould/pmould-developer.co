@@ -32,7 +32,7 @@ const routes: Routes = [
     component: AboutMeComponent
   },
   {
-    path: ':slug',
+    path: 'blog/:slug',
     component: PostSingleComponent
   }  
 ];
