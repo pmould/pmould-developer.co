@@ -30,6 +30,9 @@ export class HeaderComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    setTimeout(()=> {
+      $('.navbar').css('width', '100%');
+    }, '1500');    
   }
 
   scrollDown() {
