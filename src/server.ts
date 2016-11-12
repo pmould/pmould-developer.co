@@ -1,76 +1,86 @@
-// These polyfills must be the first thing imported in node
-
+// the polyfills must be one of the first things imported in node.js.
+// The only modules to be imported higher - node modules with es6-promise 3.x or other Promise polyfill dependency
+// (rule of thumb: do it if you have zone.js exception that it has been overwritten)
+// if you are including modules that modify Promise, such as NewRelic,, you must include them before polyfills
 import 'angular2-universal-polyfills';
+
+// Fix Universal Style
+import { NodeDomRootRenderer, NodeDomRenderer } from 'angular2-universal/node';
+function renderComponentFix(componentProto: any) {
+  return new NodeDomRenderer(this, componentProto, this._animationDriver);
+}
+NodeDomRootRenderer.prototype.renderComponent = renderComponentFix;
+// End Fix Universal Style
+
 import * as path from 'path';
 import * as express from 'express';
+import * as bodyParser from 'body-parser';
+import * as cookieParser from 'cookie-parser';
 
+// Angular 2
+import { enableProdMode } from '@angular/core';
 // Angular 2 Universal
-import {provideRouter} from '@angular/router';
-import {enableProdMode} from '@angular/core';
-import {
-  expressEngine,
-  BASE_URL,
-  REQUEST_URL,
-  ORIGIN_URL,
-  NODE_LOCATION_PROVIDERS,
-  NODE_HTTP_PROVIDERS,
-  ExpressEngineConfig
-} from 'angular2-universal';
+import { createEngine } from 'angular2-express-engine';
 
-// replace this line with your Angular 2 root component
-import {App, routes} from './app';
+// App
+import { AppModule } from './app/app.module';
+
+// enable prod for faster renders
+enableProdMode();
 
 const app = express();
 const ROOT = path.join(path.resolve(__dirname, '..'));
 
-enableProdMode();
-
 // Express View
-app.engine('.html', expressEngine);
+app.engine('.html', createEngine({
+  precompile: true,
+  ngModule: AppModule,
+  providers: [
+    // use only if you have shared state between users
+    // { provide: 'LRU', useFactory: () => new LRU(10) }
+
+    // stateless providers only since it's shared
+  ]
+}));
+app.set('port', process.env.PORT || 3000);
 app.set('views', __dirname);
 app.set('view engine', 'html');
 
-function ngApp(req, res) {
-  let baseUrl = '/';
-  let url = req.originalUrl || '/';
-
-  let config: ExpressEngineConfig = {
-    directives: [ App ],
-
-    // dependencies shared among all requests to server
-    platformProviders: [
-      {provide: ORIGIN_URL, useValue: 'http://localhost:3000'},
-      {provide: BASE_URL, useValue: baseUrl},
-    ],
-
-    // dependencies re-created for each request
-    providers: [
-      {provide: REQUEST_URL, useValue: url},
-      provideRouter(routes),
-      NODE_LOCATION_PROVIDERS,
-      NODE_HTTP_PROVIDERS,
-    ],
-
-    // if true, server will wait for all async to resolve before returning response
-    async: true,
-
-    // if you want preboot, you need to set selector for the app root
-    // you can also include various preboot options here (explained in separate document)
-    preboot: false // { appRoot: 'app' }
-  };
-
-  res.render('index', config);
-}
+app.use(cookieParser('Angular 2 Universal'));
+app.use(bodyParser.json());
 
 // Serve static files
-app.use(express.static(ROOT, {index: false}));
+app.use('/assets', express.static(path.join(__dirname, 'assets'), {maxAge: 30}));
+app.use(express.static(path.join(ROOT, 'dist/client'), {index: false}));
 
-// send all requests to Angular Universal
-// if you want Express to handle certain routes (ex. for an API) make sure you adjust this
+
+//import { serverApi } from './backend/api';
+// Our API for demos only
+//app.get('/data.json', serverApi);
+
+function ngApp(req, res) {
+  res.render('index', {
+    req,
+    res,
+    preboot: false,
+    baseUrl: '/',
+    requestUrl: req.originalUrl,
+    originUrl: 'http://localhost:3000'
+  });
+}
+// Routes with html5pushstate
+// ensure routes match client-side-app
 app.get('/', ngApp);
-app.get('/home', ngApp);
 
+/*
+app.get('*', function(req, res) {
+  res.setHeader('Content-Type', 'application/json');
+  var pojo = { status: 404, message: 'No Content' };
+  var json = JSON.stringify(pojo, null, 2);
+  res.status(404).send(json);
+});
+*/
 // Server
-app.listen(3000, () => {
-  console.log('Listening on: http://localhost:3000');
+let server = app.listen(app.get('port'), () => {
+  console.log(`Listening on: http://localhost:${server.address().port}`);
 });
