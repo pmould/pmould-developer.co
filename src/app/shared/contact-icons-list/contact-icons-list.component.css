@@ -1,0 +1,63 @@
+:host {
+  display: block;
+}
+
+.row {
+  display: block;
+}
+
+.connect-row {
+  margin-top: 25px;
+}
+
+hr {
+  margin: 0px;
+}
+
+h3 {
+    margin: 3px 0px;
+}
+
+.connect-list {
+  margin-top: 25px;
+  list-style: none;
+  padding: 0;
+}
+
+.connect-list a {
+  text-decoration: none;
+}
+.connect-list a:hover span,.connect-list a:hover .fa {
+  opacity: .8;
+}
+
+.connect-list a:hover span {
+  color: #919190; 
+}
+.connect-list a:hover .fa {
+  color: #00a0d4;
+}
+
+.connect-list span {
+  vertical-align: middle;
+  line-height: 75px;
+  display: inline-block;
+  font-size: 20px;
+  margin-left: 20px;
+  color: #919190; 
+}
+
+.connect-list .fa {
+  float: left;
+  font-size: 60px;
+  color: #00a0d4;
+}
+.fa-github {
+  font-size: 60px;
+}
+
+@media (max-width: 768px) {
+  .connect-list span {
+    display: none;
+  }
+}

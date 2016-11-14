@@ -1,0 +1,25 @@
+<app-header></app-header>
+<div class="container">
+  <div class="row">   
+    <div [@flyInOut]="'in'" class="col-xs-12 col-sm-6 about-me-txt">
+      <h1>Hire Paul</h1>
+      <hr>
+      <form>
+        <p>
+          <md-input placeholder="Company/Name"></md-input>
+        </p>
+        <p>
+          <md-input placeholder="Email"></md-input>
+        </p>
+        <p>
+          <md-textarea rows="4" placeholder="Message"></md-textarea>
+        </p>
+        <button md-raised-button md-button class="md-raised">SEND</button>
+      </form>
+    </div> 
+    <div [@flyInOutRight]="'in'" class="col-xs-12 col-sm-6">
+      <img class="about-me-img img-responsive" [src]="aboutMeImg" alt="">
+    </div>
+  </div>
+  <contact-icons-list></contact-icons-list>
+</div>

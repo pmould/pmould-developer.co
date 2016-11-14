@@ -23,6 +23,25 @@ hr {
   background-color: #00a0d4;
   margin: 10px 0 8px;
 }
+
+md-input {
+  width: 100%;
+}
+
+md-textarea {
+  width: 100%;
+}
+
+form {
+  margin-top: 25px;
+}
+
+button {
+  background: #00a0d4;
+  color: white;
+  text-transform: capitalize;
+}
+
 @media (max-width: 767px) {
   .container {
       margin-top: 100px;

@@ -78,6 +78,9 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 export class PostSingleComponent implements OnInit {
 
   post;//: Post;
+  pageIdentifier;
+  pageUrl;
+  featuredImage;
 
   constructor(private postsService: PostsService, private route: ActivatedRoute,private _router: Router, private el: ElementRef ) {
    
@@ -88,6 +91,7 @@ export class PostSingleComponent implements OnInit {
       .getPost(slug)
       .subscribe(res => {
         this.post = res[0];
+        this.featuredImage = this.post.featured_image;
          this.el.nativeElement.querySelector('.content').innerHTML = this.post.content.rendered;
           let fragment ='';
           this.route.fragment.forEach((f)=> {
@@ -112,10 +116,13 @@ export class PostSingleComponent implements OnInit {
   }
 
   ngOnInit() {
+    let slug;
     this.route.params.forEach((params: Params) => {
-       let slug = params['slug'];
+       slug = params['slug'];
        this.getPost(slug)
     });
+    this.pageUrl = window.location.href;
+    this.pageIdentifier = slug;
     $('.navbar').css('background', 'white');
   }
 

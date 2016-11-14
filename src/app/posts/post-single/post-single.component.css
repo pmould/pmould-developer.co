@@ -1,5 +1,6 @@
 .container-wrapper {
   border-top: 1px solid #cdcdcd;
+  margin-bottom: 45px;
 }
 
 .blog-header {
@@ -24,8 +25,16 @@
     overflow: hidden;
 }
 
+.featured-image {
+  margin-bottom: 45px;
+}
+
 .post {
   margin-top: 60px;
+}
+
+.content {
+  margin-bottom: 45px;
 }
 
 @media (max-width: 768px) {

@@ -33,6 +33,16 @@
   transition: all .5s linear;
 }
 
+.navbar .hire-me {
+  color: rgb(129, 129, 128);
+  background: rgba(0, 160, 212, 0.72);
+  transition: background .2s linear, color .2s linear;
+}
+.navbar-default .navbar-nav > li > a.hire-me:hover, .navbar-default .navbar-nav > li > a.hire-me:focus {
+  color: rgb(109, 109, 108);
+  background: rgb(0, 160, 212);
+}
+
 @media (min-width: 768px) {
   .navbar li {
     float: left;
@@ -58,6 +68,13 @@
     padding-top: 105px;
   }
 }
+
+@media (min-width: 768px) and (max-width: 1199px) {
+  .navbar li {
+    padding: 52px 46px;
+  } 
+}
+
 @media (max-width: 767px) {
   .navbar {
     background: white;
@@ -84,5 +101,6 @@
 @media (min-width: 767px) and (max-width: 991px) {
   .navbar li {
     padding: 52px 39px;
+    padding: 52px 19px;
   }
 }

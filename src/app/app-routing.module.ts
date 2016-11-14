@@ -5,7 +5,7 @@ import { PostListComponent } from './posts/post-list/post-list.component';
 import { PostSingleComponent } from './posts/post-single/post-single.component';
 import { ProjectComponent } from './home/projects/project';
 import { AboutMeComponent } from './about-me';
-
+import { ContactComponent } from './contact';
 const routes: Routes = [
   {
     path: '',
@@ -34,6 +34,10 @@ const routes: Routes = [
   {
     path: 'blog/:slug',
     component: PostSingleComponent
+  },
+  {
+    path: 'contact',
+    component: ContactComponent
   }  
 ];
 

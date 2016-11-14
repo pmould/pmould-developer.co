@@ -18,23 +18,23 @@ import { Observable } from 'rxjs/Observable';
   styleUrls: ['./project.component.css'],
   animations: [
     trigger('flyInOutBottom', [
-      state('in', style({transform: 'translateY(0)'})),
+      state('in', style({transform: 'translateY(0)', opacity: 1})),
       transition('void => *', [
-        style({transform: 'translateY(250%)'}),
-        animate('.350s .25s')
+        style({transform: 'translateY(400%)', opacity: 0}),
+        animate('.350s .4s')
       ]),
       transition('* => void', [
-        animate('.350s .25s', style({transform: 'translateY(100%)'}))
+        animate('.350s .4s', style({transform: 'translateY(100%)'}))
       ])
     ]),
     trigger('flyInOut', [
-      state('in', style({transform: 'translateY(0)'})),
+      state('in', style({transform: 'translateY(0)', opacity: 1})),
       transition('void => *', [
-        style({transform: 'translateY(-250%)'}),
-        animate('.350s .25s')
+        style({transform: 'translateY(-250%)', opacity: 0}),
+        animate('.350s .4s')
       ]),
       transition('* => void', [
-        animate('.350s .25s', style({transform: 'translateY(100%)'}))
+        animate('.350s .4s', style({transform: 'translateY(100%)'}))
       ])
     ])
   ]

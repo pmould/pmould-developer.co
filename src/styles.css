@@ -47,3 +47,20 @@
     transform: scale(1.0);
   }
 }
+
+.index-logo {
+  position: absolute;
+  opacity: 0;
+}
+
+.md-input-placeholder.md-focused {
+  color: #00a0d4;
+}
+
+.md-input-ripple.md-focused {
+  background: #00a0d4;
+}
+
+.md-ripple-background.md-ripple-active {
+  opacity: 1;
+}
