@@ -40,12 +40,12 @@
 
 .position {
     position: relative;
-    top: 43%;
+    top: 36%;
     margin: 0 auto;
     display: block;
     text-align: center;
     width: 515px;
-    height: 213px;
+    height: 267px;
     overflow: hidden;
     color: white;
     background: rgba(0, 0, 0, 0.42);
@@ -64,6 +64,18 @@
   width: 113px;
   -webkit-filter: grayscale(0%);
   filter: grayscale(0%);
+}
+
+.view-portfolio {
+  line-height: 24px;
+  font-size: 17px;
+  color: white;
+  text-decoration: none;
+}
+
+.view-portfolio .fa-angle-down {
+  display: block;
+  line-height: 8px;
 }
 
 @media (max-width: 767px) {

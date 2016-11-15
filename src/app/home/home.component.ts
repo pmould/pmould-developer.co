@@ -49,4 +49,12 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
   }
 
+  scrollDown() {
+    if($(".gallery").length) {
+      $('html, body').animate({
+        scrollTop: $(".gallery").offset().top
+      }, 2000); 	
+    }
+  }
+
 }
