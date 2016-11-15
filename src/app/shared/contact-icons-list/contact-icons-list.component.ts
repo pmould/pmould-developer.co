@@ -1,7 +1,6 @@
 import {
   Component,
   OnInit,
-  AfterViewChecked,
   trigger,
   state,
   style,
@@ -34,7 +33,7 @@ import {
     ])
   ]
 })
-export class ContactIconsListComponent implements OnInit, AfterViewChecked {
+export class ContactIconsListComponent implements OnInit {
 
   @HostBinding('class.row') row = true;
 
@@ -44,8 +43,8 @@ export class ContactIconsListComponent implements OnInit, AfterViewChecked {
     window.scrollTo(0, 0);
   }
 
-  ngAfterViewChecked() {
-  
+  goToUrl(url) {
+    window.open(url, '_blank');
   }
 
 }
