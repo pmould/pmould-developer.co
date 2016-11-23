@@ -42,6 +42,27 @@ button {
   text-transform: capitalize;
 }
 
+.error {
+  font-size: 13px;
+  color: #c7254e;
+  background: #f9f2f4;
+  border-radius: 3px;
+  padding: 15px;
+  margin: -10px 0 5px;
+}
+
+.success-message {
+  overflow: hidden;
+}
+
+.success {
+  font-size: 13px;
+  color: #0d8a00;
+  background: #e2f7e3;
+  border-radius: 3px;
+  padding: 15px;
+  margin: 5px 0 5px;
+}
 @media (max-width: 767px) {
   .container {
       margin-top: 100px;

@@ -4,17 +4,37 @@
     <div [@flyInOut]="'in'" class="col-xs-12 col-sm-6 about-me-txt">
       <h1>Hire Paul</h1>
       <hr>
-      <form>
-        <p>
-          <md-input placeholder="Company/Name"></md-input>
-        </p>
-        <p>
-          <md-input placeholder="Email"></md-input>
-        </p>
-        <p>
-          <md-textarea rows="4" placeholder="Message"></md-textarea>
-        </p>
-        <button md-raised-button md-button class="md-raised">SEND</button>
+      <form [formGroup]="contactForm" novalidate (ngSubmit)="save(contactForm.value, contactForm.valid)">
+        <div>
+          <md-input type="text" formControlName="name" placeholder="Company/Name"></md-input>
+          <div class="error" [hidden]="(!contactForm.get('name').hasError('required') || (contactForm.get('name').untouched)) && (!contactForm.get('name').hasError('required') || !submittedValidate)">
+              Name is required.
+          </div>
+          <div class="error" [hidden]="(!contactForm.get('name').hasError('minlength') || (contactForm.get('name').untouched)) && (!contactForm.get('name').hasError('required') || !submittedValidate)">
+              Name is required (minimum 5 characters).
+          </div>
+        </div>
+        <div>
+          <md-input type="email" formControlName="email" placeholder="Email"></md-input>
+          <div class="error" [hidden]="(!contactForm.get('email').hasError('required') || (contactForm.get('email').untouched)) && (!contactForm.get('email').hasError('required') || !submittedValidate)">
+              Email is required.
+          </div>
+          <div class="error" [hidden]="(!contactForm.get('email').hasError('invalidEmail') || (contactForm.get('email').untouched) || contactForm.get('email').hasError('required')) && (!contactForm.get('email').hasError('required') || !submittedValidate)">
+              Invalid Email.
+          </div>
+        </div>
+        <div>
+          <md-textarea type="text" formControlName="message"  rows="4" placeholder="Message"></md-textarea>
+          <div class="error" [hidden]="(!contactForm.get('message').hasError('required') || (contactForm.get('message').untouched)) && (!contactForm.get('message').hasError('required') || !submittedValidate)">
+              Message is required
+          </div>
+        </div>
+        <button md-raised-button md-button class="md-raised" [disabled]="submissionSent">SEND</button>
+        <div class="success-message">
+          <div [@flyInOutTop]="'in'" class="success" *ngIf="submitted">
+              Message sent sucessfully 
+          </div>
+        </div>
       </form>
     </div> 
     <div [@flyInOutRight]="'in'" class="col-xs-12 col-sm-6">

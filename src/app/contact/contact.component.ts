@@ -7,6 +7,9 @@ import {
   animate,
   transition
 } from '@angular/core';
+import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
+
+import { ContactService } from './contact.service';
 
 @Component({
   selector: 'app-contact',
@@ -32,14 +35,71 @@ import {
       transition('* => void', [
         animate('.350s 1.25s', style({transform: 'translateX(100%)'}))
       ])
+    ]),
+    trigger('flyInOutTop', [
+      state('in', style({transform: 'translateY(0)'})),
+      transition('void => *', [
+        style({transform: 'translateY(-100%)'}),
+        animate('.4s')
+      ]),
+      transition('* => void', [
+        animate('.4s', style({transform: 'translateY(-100%)'}))
+      ])
     ]) 
   ]
 })
 export class ContactComponent implements OnInit {
   aboutMeImg = 'assets/img/about-me-img.jpg';
-  constructor() { }
+  submitted = false;
+  submissionSent = false;
+  submittedValidate = false;
+  contactForm: FormGroup;
+  constructor(private _fb: FormBuilder, private contactService: ContactService) { }
 
   ngOnInit() {
+
+      // the short way
+      this.contactForm = this._fb.group({
+        name: ['', [<any>Validators.required, <any>Validators.minLength(5)]],
+        email: ['', [<any>Validators.required, this.emailValidator]],
+        message: ['', <any>Validators.required]
+      });
+      this.contactForm.valueChanges.subscribe( x => {
+        console.log(x);
+      });
   }
+
+  save(form, valid) {
+    if (valid) {
+      this.contactService.saveMessage(form)
+        .subscribe(data => {
+           let res = data.json();
+           if(res.response === 'success') {
+             this.submitted = true;
+             setTimeout(() => {
+               this.submitted = false;
+               this.submittedValidate = false;
+               this.submissionSent = false;
+               this.contactForm.reset();
+             }, 3000)
+           } else {
+             this.submissionSent = false;
+           }
+           
+        }
+      );
+      this.submissionSent = true;
+    } else {
+      this.submittedValidate = true;
+    }
+  }
+
+  emailValidator(control) {
+    var EMAIL_REGEXP = /^[a-z0-9!#$%&'*+\/=?^_`{|}~.-]+@[a-z0-9]([a-z0-9-]*[a-z0-9])?(\.[a-z0-9]([a-z0-9-]*[a-z0-9])?)*$/i;
+
+    if (!EMAIL_REGEXP.test(control.value)) {
+      return {invalidEmail: true};
+    }
+}  
 
 }
