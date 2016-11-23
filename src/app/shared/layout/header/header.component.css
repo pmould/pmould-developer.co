@@ -69,9 +69,13 @@
   }
 }
 
-@media (min-width: 768px) and (max-width: 1199px) {
+@media (min-width: 992px) and (max-width: 1199px) {
   .navbar li {
     padding: 52px 46px;
+  }
+
+  .navbar.on li {
+    padding: 27px 46px;
   } 
 }
 
@@ -100,7 +104,10 @@
 
 @media (min-width: 767px) and (max-width: 991px) {
   .navbar li {
-    padding: 52px 39px;
     padding: 52px 19px;
   }
+
+  .navbar.on li {
+    padding: 27px 40px;
+  } 
 }
