@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http, Response, Headers, RequestOptions } from '@angular/http';
+import { Http, Response, Headers, RequestOptions,  } from '@angular/http';
 
 @Injectable()
 export class ContactService {
@@ -9,8 +9,8 @@ export class ContactService {
   saveMessage(form){
     let headers = new Headers({ 'Content-Type': 'application/json' });
     let options = new RequestOptions({ headers: headers });
-
-    return this.http.post('http://localhost:3000/saveMessage', form, options);
+    let loc = window.location;
+    return this.http.post(loc.protocol+'//'+loc.host+':3000/saveMessage', form, options);
   }
 
 }

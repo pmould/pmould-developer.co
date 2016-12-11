@@ -1,4 +1,6 @@
 import { Component, OnInit, OnDestroy} from '@angular/core';
+import { MetaService } from 'ng2-meta';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -6,6 +8,10 @@ import { Component, OnInit, OnDestroy} from '@angular/core';
 })
 export class AppComponent implements OnInit{
   
+  constructor(private metaService: MetaService) {
+
+  }
+
   ngOnInit() {
     $(window).scroll(function() {
         if ($(window).scrollTop() > 10){

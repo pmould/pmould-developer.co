@@ -12,6 +12,7 @@ import {
 import { Post } from '../post';
 import { PostsService } from '../posts.service';
 import { Router, ActivatedRoute, Params } from '@angular/router';
+import { MetaService } from 'ng2-meta';
 
 @Component({
   selector: 'app-post-single',
@@ -82,7 +83,13 @@ export class PostSingleComponent implements OnInit {
   pageUrl;
   featuredImage;
 
-  constructor(private postsService: PostsService, private route: ActivatedRoute,private _router: Router, private el: ElementRef ) {
+  constructor(
+    private postsService: PostsService,
+    private route: ActivatedRoute,
+    private _router: Router,
+    private el: ElementRef,
+    private metaService: MetaService
+     ) {
    
   }
 
@@ -93,6 +100,9 @@ export class PostSingleComponent implements OnInit {
         this.post = res[0];
         this.featuredImage = this.post.featured_image;
          this.el.nativeElement.querySelector('.content').innerHTML = this.post.content.rendered;
+          this.metaService.setTitle(this.post.title.rendered);
+          this.metaService.setTag('twitter:title', this.post.title.rendered);
+          this.metaService.setTag('og:image', this.featuredImage);
           let fragment ='';
           this.route.fragment.forEach((f)=> {
             if ($('#'+f).length) {
@@ -100,6 +110,7 @@ export class PostSingleComponent implements OnInit {
                   scrollTop: $('#'+f).offset().top -200
               }, 0);  
               window.location.hash = f; 
+              alert(f);
             }       
           });
          $('.content a').click((e) => {

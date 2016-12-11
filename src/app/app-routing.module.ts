@@ -10,26 +10,51 @@ const routes: Routes = [
   {
     path: '',
     redirectTo: '/home',
-    pathMatch: 'full'
+    pathMatch: 'full',
+    data: {
+      meta: {
+        title: 'Home | PMOULD Developer Co',
+      }
+    }
   },
   {
     path: 'home',
     component: HomeComponent,
-    pathMatch: 'full'
+    pathMatch: 'full',
+    data: {
+      meta: {
+        title: 'Home | PMOULD Developer Co',
+      }
+    }
   },
   {
     path: 'project/:slug',
     component: ProjectComponent,
-    pathMatch: 'full'
+    pathMatch: 'full',
+    data: {
+      meta: {
+        title: 'Projects | PMOULD Developer Co',
+      }
+    }
   },
   {
     path: 'blog',
     component: PostListComponent,
-    pathMatch: 'full'
+    pathMatch: 'full',
+    data: {
+      meta: {
+        title: 'Blog | PMOULD Developer Co',
+      }
+    }
   },
   {
     path: 'about-me',
-    component: AboutMeComponent
+    component: AboutMeComponent,
+    data: {
+      meta: {
+        title: 'About | PMOULD Developer Co',
+      }
+    }
   },
   {
     path: 'blog/:slug',
@@ -37,7 +62,12 @@ const routes: Routes = [
   },
   {
     path: 'contact',
-    component: ContactComponent
+    component: ContactComponent,
+    data: {
+      meta: {
+        title: 'Contact | PMOULD Developer Co',
+      }
+    }
   }  
 ];
 

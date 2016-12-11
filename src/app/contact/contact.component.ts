@@ -64,9 +64,6 @@ export class ContactComponent implements OnInit {
         email: ['', [<any>Validators.required, this.emailValidator]],
         message: ['', <any>Validators.required]
       });
-      this.contactForm.valueChanges.subscribe( x => {
-        console.log(x);
-      });
   }
 
   save(form, valid) {
@@ -94,12 +91,15 @@ export class ContactComponent implements OnInit {
     }
   }
 
-  emailValidator(control) {
+  emailValidator(control: FormControl) {
+    if (Validators.required(control)) {
+      return null;
+    }
     var EMAIL_REGEXP = /^[a-z0-9!#$%&'*+\/=?^_`{|}~.-]+@[a-z0-9]([a-z0-9-]*[a-z0-9])?(\.[a-z0-9]([a-z0-9-]*[a-z0-9])?)*$/i;
 
     if (!EMAIL_REGEXP.test(control.value)) {
       return {invalidEmail: true};
     }
-}  
+  }  
 
 }
