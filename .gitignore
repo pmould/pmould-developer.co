@@ -4,7 +4,7 @@
 system-config.js*
 app/**/*.js
 app/**/*.map
-
+src/app.js
 # compiled output
 /dist
 /tmp
