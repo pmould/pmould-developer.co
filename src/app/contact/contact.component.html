@@ -6,7 +6,10 @@
       <hr>
       <form [formGroup]="contactForm" novalidate (ngSubmit)="save(contactForm.value, contactForm.valid)">
         <div>
-          <md-input type="text" formControlName="name" placeholder="Company/Name"></md-input>
+          <md-input-container>
+            <input mdInput type="text" formControlName="name" placeholder="Company/Name">
+          </md-input-container>
+          
           <div class="error" [hidden]="(!contactForm.get('name').hasError('required') || (contactForm.get('name').untouched)) && (!contactForm.get('name').hasError('required') || !submittedValidate)">
               Company/Name is required.
           </div>
@@ -15,7 +18,9 @@
           </div>
         </div>
         <div>
-          <md-input type="email" formControlName="email" placeholder="Email"></md-input>
+          <md-input-container>
+            <input mdInput type="email" formControlName="email" placeholder="Email"/>
+          </md-input-container>
           <div class="error" [hidden]="(!contactForm.get('email').hasError('required') || (contactForm.get('email').untouched)) && (!contactForm.get('email').hasError('required') || !submittedValidate)">
               Email is required.
           </div>
@@ -24,7 +29,9 @@
           </div>
         </div>
         <div>
-          <md-textarea type="text" formControlName="message"  rows="4" placeholder="Message"></md-textarea>
+          <md-input-container>
+            <textarea type="text" mdInput formControlName="message"  rows="4" placeholder="Message"></textarea>
+          </md-input-container>
           <div class="error" [hidden]="(!contactForm.get('message').hasError('required') || (contactForm.get('message').untouched)) && (!contactForm.get('message').hasError('required') || !submittedValidate)">
               Message is required.
           </div>

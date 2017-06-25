@@ -10,10 +10,12 @@
 .blog-header h1 {
   position: relative;
   color: #919190;
-  height: 82px;
   overflow: hidden;
   margin: 0;
   font-family: 'Roboto', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .blog-header h1::after {
   width: 100%;
@@ -27,10 +29,17 @@
   z-index: -1;
 }
 
+.blog-header .blog {
+  position: relative;
+  top: 16px;
+  font-family: cursive;
+  line-height: 1.5;
+}
+
 .blog-header {
-  text-align: center;
+  display: flex;
+  justify-content: center;
   padding-top: 155px;
-  background: #ececec;
   background-image: radial-gradient(#d3d3d3 15%, transparent 16%), radial-gradient(#d3d3d3 15%, transparent 16%);
   background-size: 6px 6px;
   background-position: 0 0, 3px 3px;
@@ -42,15 +51,17 @@
 }
 
 .blog-title {
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
   padding: 20px 25px 25px 25px;
   border: 5px solid #00a0d4;
-  margin: 75px 0;
-  width: 515px;
-  height: 150px;
-  overflow: hidden;
+  margin: 25px 0;
+  width: 250px;
+  height: 250px;
+  border-radius: 250px;
   background: white;
   border-style: double;
+  justify-content: center;
 }
 
 ul.posts-list{

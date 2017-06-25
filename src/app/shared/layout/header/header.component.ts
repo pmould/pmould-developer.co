@@ -11,7 +11,7 @@ import {
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css'],
+  styleUrls: ['./header.component.scss'],
   animations: [
     trigger('flyInOut', [
       state('in', style({transform: 'translateY(0)'})),

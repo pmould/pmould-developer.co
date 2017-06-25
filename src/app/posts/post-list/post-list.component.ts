@@ -32,30 +32,12 @@ import * as moment from 'moment';
       ]),
     ]),
     trigger('flyInOut', [
-      state('in', style({width: 515, transform: 'translateX(0)', opacity: 1})),
+      state('in', style({transform: 'translateY(0)'})),
       transition('void => *', [
-        style({width: 0, padding: 0, border: 'none',overflow: 'hidden', transform: 'translateX(50px)', opacity: 0}),
+        style({transform: 'translateY(-500px)'}),
         group([
-          animate('0.5s .75s ease', style({
-            transform: 'translateX(0)',
-            width: 515,
-            padding: '20px 25px 25px 25px',
-            border: '5px solid #00a0d4',
-            overflow: 'initial'
-          })),
-          animate('0.5s ease', style({
-            opacity: 1
-          }))
-        ])
-      ]),
-      transition('* => void', [
-        group([
-          animate('0.5s ease', style({
-            transform: 'translateX(50px)',
-            width: 0
-          })),
-          animate('0.5s .75s ease', style({
-            opacity: 0
+          animate('1.25s ease-out', style({
+            transform: 'translateY(0px)',
           }))
         ])
       ])

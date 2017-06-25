@@ -8,6 +8,9 @@ import {
   transition
 } from '@angular/core';
 
+import { Inject} from "@angular/core";
+import { DOCUMENT } from '@angular/platform-browser';
+
 @Component({
   selector: 'app-about-me',
   templateUrl: './about-me.component.html',
@@ -37,9 +40,10 @@ import {
 })
 export class AboutMeComponent implements OnInit {
   aboutMeImg = 'assets/img/about-me-img.jpg';
-  constructor() { }
+  constructor(@Inject(DOCUMENT) private document: Document) { }
 
   ngOnInit() {
+     this.document.body.scrollTop = 0;
   }
 
 }
