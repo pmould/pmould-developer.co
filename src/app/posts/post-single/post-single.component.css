@@ -6,23 +6,28 @@
 .blog-header {
   text-align: center;
   padding-top: 155px;
-  background: #ececec;
   background-image: radial-gradient(#d3d3d3 15%, transparent 16%), radial-gradient(#d3d3d3 15%, transparent 16%);
   background-size: 6px 6px;
   background-position: 0 0, 3px 3px;
   transition: all .5s linear;
+  display: flex;
+  justify-content: center;
 }
 
 .blog-header h1 {
   font-size: 48px;
   overflow: hidden;
   font-family: 'Roboto', sans-serif;
+  color: #5a5a5a;
 }
 
 .blog-title {
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     margin: 75px 0;
     overflow: hidden;
+    font-family: cursive;
 }
 
 .featured-image {

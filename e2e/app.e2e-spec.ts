@@ -1,14 +1,14 @@
-import { Wpng2TestPage } from './app.po';
+import { PROJECTNAMEPage } from './app.po';
 
-describe('wpng2-test App', function() {
-  let page: Wpng2TestPage;
+describe('project-name App', () => {
+  let page: PROJECTNAMEPage;
 
   beforeEach(() => {
-    page = new Wpng2TestPage();
+    page = new PROJECTNAMEPage();
   });
 
-  it('should display message saying app works', () => {
+  it('should display welcome message', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('app works!');
+    expect(page.getParagraphText()).toEqual('Welcome to app!!');
   });
 });

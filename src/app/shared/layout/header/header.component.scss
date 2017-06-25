@@ -1,4 +1,3 @@
-
 .navbar {
   transition: all .5s linear;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -11,11 +10,9 @@
 .navbar a {
   color: #00a0d4;
 }
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus,
 .navbar a:hover {
-  color: #00a0d4;
-}
-.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
-    color: #00a0d4;
+  color: darken(#00a0d4, 7%);
 }
 
 .navbar-brand {

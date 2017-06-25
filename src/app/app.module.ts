@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { MaterialModule } from '@angular/material';
-
+import * as $ from 'jquery';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { HomeModule } from './home/home.module'
@@ -17,7 +16,8 @@ import { AboutMeComponent } from './about-me/about-me.component';
 import { ContactComponent, ContactService} from './contact';
 import { DisqusModule } from 'angular2-disqus';
 import { HighlightJsModule, HighlightJsService } from 'angular2-highlight-js';
-import { MetaModule } from 'ng2-meta';
+import { MdInputModule, MdButtonModule, MdIconModule, MdIconRegistry } from '@angular/material';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -39,13 +39,20 @@ import { MetaModule } from 'ng2-meta';
     ReactiveFormsModule,
     HttpModule,
     Wpng2RoutingModule,
-    MaterialModule.forRoot(),
     DisqusModule,
     HighlightJsModule,
-    MetaModule.forRoot()
+    MdInputModule,
+    MdButtonModule,
+    MdIconModule,
+    BrowserAnimationsModule,
   ],
   providers: [ProjectsService, HighlightJsService, ContactService],
   bootstrap: [AppComponent],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
-export class AppModule { }
+export class AppModule {
+ constructor(mdIconRegistry: MdIconRegistry) {
+   mdIconRegistry.registerFontClassAlias('fontawesome', 'fa');
+ }
+}
+

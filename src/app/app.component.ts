@@ -1,5 +1,4 @@
 import { Component, OnInit, OnDestroy} from '@angular/core';
-import { MetaService } from 'ng2-meta';
 
 @Component({
   selector: 'app-root',
@@ -7,23 +6,19 @@ import { MetaService } from 'ng2-meta';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit{
-  
-  constructor(private metaService: MetaService) {
 
-  }
 
   ngOnInit() {
     $(window).scroll(function() {
         if ($(window).scrollTop() > 10){
+            $('.intro').addClass('on');
             $('.navbar').addClass('on');
-            $('.header-image').addClass('on');
-            $('.position').addClass('on');
             $('.blog-header').addClass('on');
         } else {
+          $('.intro').removeClass('on');
         	$('.navbar').removeClass('on');
-        	$('.header-image').removeClass('on');
-        	$('.position').removeClass('on');
           $('.blog-header').removeClass('on');
+          
         }
     });
   }

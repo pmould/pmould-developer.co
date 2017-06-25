@@ -12,7 +12,6 @@ import {
 import { Post } from '../post';
 import { PostsService } from '../posts.service';
 import { Router, ActivatedRoute, Params } from '@angular/router';
-import { MetaService } from 'ng2-meta';
 
 @Component({
   selector: 'app-post-single',
@@ -87,8 +86,7 @@ export class PostSingleComponent implements OnInit {
     private postsService: PostsService,
     private route: ActivatedRoute,
     private _router: Router,
-    private el: ElementRef,
-    private metaService: MetaService
+    private el: ElementRef
      ) {
    
   }
@@ -100,9 +98,9 @@ export class PostSingleComponent implements OnInit {
         this.post = res[0];
         this.featuredImage = this.post.featured_image;
          this.el.nativeElement.querySelector('.content').innerHTML = this.post.content.rendered;
-          this.metaService.setTitle(this.post.title.rendered);
-          this.metaService.setTag('twitter:title', this.post.title.rendered);
-          this.metaService.setTag('og:image', this.featuredImage);
+          // this.metaService.setTitle(this.post.title.rendered);
+          // this.metaService.setTag('twitter:title', this.post.title.rendered);
+          // this.metaService.setTag('og:image', this.featuredImage);
           let fragment ='';
           this.route.fragment.forEach((f)=> {
             if ($('#'+f).length) {

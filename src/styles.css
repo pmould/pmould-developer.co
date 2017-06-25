@@ -55,14 +55,30 @@
   opacity: 0;
 }
 
-.md-input-placeholder.md-focused {
+.mat-focused  .mat-input-placeholder{
   color: #00a0d4;
 }
 
-.md-input-ripple.md-focused {
+.mat-input-invalid .mat-input-placeholder{
+  color: #c7254e;;
+}
+
+.mat-focused .mat-input-ripple {
   background: #00a0d4;
 }
 
-.md-ripple-background.md-ripple-active {
+.mat-input-invalid .mat-input-ripple {
+  background: #c7254e;
+}
+
+.mat-ripple-active .mat-ripple-background {
   opacity: 1;
+}
+
+.mat-input-ripple {
+  background: #00a0d4;
+}
+
+.mat-input-invalid .mat-ripple-background {
+  background: #c7254e;
 }

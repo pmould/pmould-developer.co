@@ -24,11 +24,11 @@ hr {
   margin: 10px 0 8px;
 }
 
-md-input {
+md-input-container {
   width: 100%;
 }
 
-md-textarea {
+textarea {
   width: 100%;
 }
 
