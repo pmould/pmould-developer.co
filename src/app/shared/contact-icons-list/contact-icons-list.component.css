@@ -27,6 +27,7 @@ h3 {
 
 .connect-list a {
   text-decoration: none;
+  cursor: pointer;
 }
 .connect-list a:hover span,.connect-list a:hover .fa {
   opacity: .8;
